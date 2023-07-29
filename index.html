@@ -12,15 +12,269 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			.split-screen-container {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.split-screen-container-vertical {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.split-screen-container pre,
+			.split-screen-container-vertical pre {
+				flex: 1;
+				margin: 0;
+				padding: 20px;
+				overflow: auto;
+			}
+
+			.split-screen-container .live-example,
+			.split-screen-container-vertical .live-example {
+				flex: 1;
+				padding: 20px;
+			}
+
+			.showcases {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
+			}
+
+			.showcases img {
+				width: 21%;
+				height: auto;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<div style="display: flex; justify-content: center; align-items: center;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="90" height="96" viewBox="0 0 36 32" fill="none" class="css-1170n61"><path fill-rule="evenodd" clip-rule="evenodd" d="M30.343 21.976a1 1 0 00.502-.864l.018-5.787a1 1 0 01.502-.864l3.137-1.802a1 1 0 011.498.867v10.521a1 1 0 01-.502.867l-11.839 6.8a1 1 0 01-.994.001l-9.291-5.314a1 1 0 01-.504-.868v-5.305c0-.006.007-.01.013-.007.005.003.012 0 .012-.007v-.006c0-.004.002-.008.006-.01l7.652-4.396c.007-.004.004-.015-.004-.015a.008.008 0 01-.008-.008l.015-5.201a1 1 0 00-1.5-.87l-5.687 3.277a1 1 0 01-.998 0L6.666 9.7a1 1 0 00-1.499.866v9.4a1 1 0 01-1.496.869l-3.166-1.81a1 1 0 01-.504-.87l.028-16.43A1 1 0 011.527.86l10.845 6.229a1 1 0 00.996 0L24.21.86a1 1 0 011.498.868v16.434a1 1 0 01-.501.867l-5.678 3.27a1 1 0 00.004 1.735l3.132 1.783a1 1 0 00.993-.002l6.685-3.839zM31 7.234a1 1 0 001.514.857l3-1.8A1 1 0 0036 5.434V1.766A1 1 0 0034.486.91l-3 1.8a1 1 0 00-.486.857v3.668z" fill="#007FFF"></path></svg>
+						<h1 style="color: #007FFF; margin-left: 20px;">Material UI:</h1>
+					</div>
+					<p style="color: lightskyblue;">Designing Beautiful User Interfaces</p>
+				</section>
+				
+				<section style="color: lightskyblue;">
+					<h2 style="color: lightskyblue;">Introduction to Material UI</h2>
+					<ul>
+						<li>Popular UI component library for React.</li>
+						<li>Built on Google's Material Design principles.</li>
+						<li>Key features: pre-designed components, responsive layout, and theming.</li>
+					</ul>
+      	</section>
+
+				<section>
+					<section style="color: lightskyblue;">
+						<h2 style="color: lightskyblue;">MUI provides a wide range of pre-built components.</h2>
+					</section>
+
+					<section>
+						<div class="split-screen-container">
+							<div class="code-pane">
+								<pre><code style="padding: 0; max-height: 500px" class="language-jsx">
+	&lt;Grid item xs={3}&gt;
+		&lt;Button 
+					variant="contained" 
+					color="primary" 
+					fullWidth&gt;
+			Click Me
+		&lt;/Button&gt;
+	&lt;/Grid&gt;</code>
+	<code style="padding: 0; max-height: 500px" class="language-jsx">
+	&lt;Grid item xs={3}&gt;
+		&lt;Button 
+					variant="contained" 
+					color="secondary" 
+					fullWidth&gt;
+			Click Me
+		&lt;/Button&gt;
+	&lt;/Grid&gt;
+							</code></pre>
+						</div>
+						<div class="live-example-pane" style="display: flex; align-items: center;">
+							<div class="live-example">
+								<div id="button-example">
+									<img src="btn-primary.png">
+									<img src="btn-secondary.png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<section>
+					<div class="split-screen-container">
+						<div class="code-pane">
+							<pre><code style="padding: 0; max-height: 500px" class="language-jsx">
+	&lt;Grid item xs={3}&gt;
+		&lt;Button 
+					variant="outlined" 
+					color="error" 
+					fullWidth&gt;
+			Click Me
+		&lt;/Button&gt;
+	&lt;/Grid&gt;</code>
+	<code style="padding: 0; max-height: 500px" class="language-jsx">
+	&lt;Grid item xs={3}&gt;
+		&lt;Button 
+					variant="outlined" 
+					color="success" 
+					fullWidth&gt;
+			Click Me
+		&lt;/Button&gt;
+	&lt;/Grid&gt;
+							</code></pre>
+						</div>
+						<div class="live-example-pane" style="display: flex; align-items: center;">
+							<div class="live-example">
+								<div id="button-example">
+									<img src="btn-error.png">
+									<img src="btn-success.png">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="split-screen-container">
+						<div style="width: 100%;" class="code-pane">
+							<pre style="padding: 0; width: 100%;"><code style="padding: 0; max-height: 700px; font-size: 18px;" class="language-jsx">
+	&lt;Grid item xs={12} sm={6}&gt;
+    &lt;Card sx={{ maxWidth: 345 }}&gt;
+			&lt;CardMedia 
+				sx={{ height: 230 }} 
+				image="cactus.jpg"/&gt;
+			&lt;CardContent&gt;
+				&lt;Typography variant="h5" component="div"&gt;
+					Nopalitos
+				&lt;/Typography&gt;
+				&lt;Typography 
+					variant="body2" 
+					color="text.secondary"&gt;
+					Have you ever eaten a Prickly Pear cactus? 
+				&lt;/Typography&gt;
+			&lt;/CardContent&gt;
+			&lt;CardActions&gt;
+				&lt;Button size="small"&gt;Learn More&lt;/Button&gt;
+			&lt;/CardActions&gt;
+		&lt;/Card&gt;
+	&lt;/Grid&gt;
+							</code></pre>
+						</div>
+						<div class="live-example-pane" style="display: flex; align-items: center; background: lightgray;">
+							<div class="live-example">
+								<img src="card.png">
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="split-screen-container">
+						<div style="width: 55%;" class="code-pane">
+							<pre style="padding: 0; width: 100%;"><code style="padding: 0; max-height: 500px" class="language-jsx">
+		&lt;Grid item xs={12}&gt;
+			&lt;IconButton color="error"&gt;
+				&lt;FavoriteIcon /&gt;
+			&lt;/IconButton&gt;
+			&lt;IconButton color="primary"&gt;
+				&lt;ShareIcon /&gt;
+			&lt;/IconButton&gt;
+			&lt;IconButton color="secondary"&gt;
+				&lt;AlarmIcon /&gt;
+			&lt;/IconButton&gt;
+			&lt;IconButton&gt;
+				&lt;BookmarkIcon /&gt;
+			&lt;/IconButton&gt;
+		&lt;/Grid&gt;
+							</code></pre>
+						</div>
+						<div class="live-example-pane" style="display: flex; align-items: center; background: lightgray;">
+							<div class="live-example">
+								<div>
+									<img src="icons.png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="split-screen-container-vertical">	
+						<div style="width: 100%;" class="code-pane">
+							<pre style="padding: 0; width: 100%;"><code style="padding: 0; max-height: 700px; font-size: 18px;" class="language-jsx">
+				&lt;Box sx={{ flexGrow: 1 }}&gt;
+					&lt;AppBar color="secondary" position="static"&gt;
+							&lt;Toolbar&gt;
+									&lt;IconButton
+											size="large"
+											edge="start"
+											color="inherit"
+											sx={{ mr: 2 }}
+									&gt;
+											&lt;MenuIcon /&gt;
+									&lt;/IconButton&gt;
+									&lt;Typography variant="h6" component="div" sx={{ flexGrow: 1 }}&gt;
+											Material-UI Presentation
+									&lt;/Typography&gt;
+									&lt;Button color="inherit"&gt;Login&lt;/Button&gt;
+							&lt;/Toolbar&gt;
+					&lt;/AppBar&gt;
+				&lt;/Box&gt;
+							</code></pre>
+						</div>
+						<div class="live-example-pane" style="display: flex; align-items: center;">
+							<div style="padding: 0;" class="live-example">
+								<img src="appbar.png">
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<section style="color: lightskyblue;">
+				<h2 style="color: lightskyblue;">Designing Consistent User Interfaces</h2>
+				<ul>
+					<li>Keepeng things consistant</li>
+					<li>Simple design rules.</li>
+					<li>Using ready-made components.</li>
+				</ul>
+			</section>
+			
+			<section style="color: lightskyblue;">
+				<h2 style="color: lightskyblue;">Other benefits:</h2>
+				<ul>
+					<li>Strong Community and Support</li>
+					<li>Integration with Other Libraries</li>
+					<li>Constant Updates and Improvements</li>
+				</ul>
+			</section>
+
+			<section data-background="lightgray">
+				<h2>Companies </h2>
+				<h2>using Material UI</h2>
+				<div class="showcases">
+					<img src="https://mui.com/static/branding/companies/spotify-light.svg">
+					<img src="https://mui.com/static/branding/companies/amazon-light.svg">
+					<img src="https://mui.com/static/branding/companies/nasa-light.svg">
+					<img src="https://mui.com/static/branding/companies/netflix-light.svg">
+					<img src="https://mui.com/static/branding/companies/unity-light.svg">
+					<img src="https://mui.com/static/branding/companies/shutterstock-light.svg">
+				</div>
+			</section>
+
+			<section>
+				<h2 style="color: lightskyblue;">The End</h2>
+				<p style="color: lightskyblue;">Thank you for your time and attention!</p>
+			</section>
 			</div>
 		</div>
-
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
